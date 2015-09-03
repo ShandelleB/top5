@@ -4,14 +4,39 @@
   <title>Workspace</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
+     <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand"><div class="glyphicon glyphicon-headphones white"></div> Shandelle's Top Jams</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li><%= link_to "Top 5", root_path %></li>
+		  <li><%= link_to "Artists", artists_path %></li>
+		  <li><%= link_to "Songs", songs_path %></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="inner cover">
+            <%= yield %>
+          </div>
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Shandelle's Top Jams - 2015</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<%= yield %>
 
 </body>
 </html>
