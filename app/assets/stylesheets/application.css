@@ -188,3 +188,11 @@ input[type="text"], input[type=number] {
 .white {
     color: white;
 }
+
+.well {
+  background: rgba(0,0,0,0.4);
+}
+
+.glyphicon-star {
+  color: yellow;
+}

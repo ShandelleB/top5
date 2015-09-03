@@ -25,6 +25,7 @@ class ArtistsController < ApplicationController
   # POST /artists.json
   def create
     @artist = Artist.new(artist_params)
+    @songs = Song.all
 
     respond_to do |format|
       if @artist.save
@@ -55,8 +56,11 @@ class ArtistsController < ApplicationController
   # DELETE /artists/1.json
   def destroy
     @artist.destroy
+    @artist.songs.each do |song|
+      song.destroy
+    end
     respond_to do |format|
-      format.html { redirect_to artists_url, notice: 'Artist was successfully destroyed.' }
+      format.html { redirect_to artists_url, notice: 'Artist was and artist songs were successfully destroyed.' }
       format.json { head :no_content }
     end
   end
